@@ -25,9 +25,11 @@
 }
 
 #pragma mark - Third
-
 - (NSString *)getDayName:(NSDate*) date {
-    return nil;
+    NSDateFormatter *form = [NSDateFormatter new];
+    form.locale = [[NSLocale alloc] initWithLocaleIdentifier:@"ru_RU"];
+    form.dateFormat = @"E";
+    return [form stringFromDate:date];
 }
 
 #pragma mark - Fourth
